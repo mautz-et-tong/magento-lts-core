@@ -219,20 +219,6 @@
                                     </product>
                                 </children>
                             </review>
-                            <tags translate="title" module="tag">
-                                <title>Tags</title>
-                                <children>
-                                    <customer translate="title" module="tag">
-                                        <title>Customers</title>
-                                    </customer>
-                                    <popular translate="title" module="tag">
-                                        <title>Popular</title>
-                                    </popular>
-                                    <product translate="title" module="tag">
-                                        <title>Products</title>
-                                    </product>
-                                </children>
-                            </tags>
                             <search translate="title">
                                 <title>Search Terms</title>
                             </search>

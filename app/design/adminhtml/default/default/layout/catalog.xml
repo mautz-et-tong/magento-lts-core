@@ -84,18 +84,6 @@
         </block>
     </adminhtml_catalog_product_reviews>
 
-    <adminhtml_catalog_product_taggrid>
-        <block type="core/text_list" name="root" output="toHtml">
-            <block type="adminhtml/catalog_product_edit_tab_tag" name="admin.product.tags"/>
-        </block>
-    </adminhtml_catalog_product_taggrid>
-
-    <adminhtml_catalog_product_tagcustomergrid>
-        <block type="core/text_list" name="root" output="toHtml">
-            <block type="adminhtml/catalog_product_edit_tab_tag_customer" name="admin.product.tags.customers"/>
-        </block>
-    </adminhtml_catalog_product_tagcustomergrid>
-
     <adminhtml_catalog_product_options>
         <block type="core/text_list" name="root" output="toHtml">
             <block type="adminhtml/catalog_product_edit_tab_options" name="admin.product.options"/>
