@@ -233,27 +233,12 @@
                 <Mage_Customer/>
             </depends>
         </Mage_Log>
-        <Mage_Backup>
-            <active>true</active>
-            <codePool>core</codePool>
-            <depends>
-                <Mage_Core/>
-            </depends>
-        </Mage_Backup>
-        <Mage_Poll>
-            <active>true</active>
-            <codePool>core</codePool>
-            <depends>
-                <Mage_Core/>
-                <Mage_Cms/>
-            </depends>
-        </Mage_Poll>
         <Mage_Rating>
             <active>true</active>
             <codePool>core</codePool>
             <depends>
                 <Mage_Core/>
-        <Mage_Review/>
+                <Mage_Review/>
             </depends>
         </Mage_Rating>
         <Mage_Review>
@@ -264,13 +249,6 @@
                 <Mage_Core/>
             </depends>
         </Mage_Review>
-        <Mage_Tag>
-            <active>true</active>
-            <codePool>core</codePool>
-            <depends>
-                <Mage_Catalog/>
-            </depends>
-        </Mage_Tag>
         <Mage_Cms>
             <active>true</active>
             <codePool>core</codePool>

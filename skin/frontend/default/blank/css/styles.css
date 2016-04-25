@@ -568,15 +568,6 @@ tr.summary-details-excluded { font-style:italic; }
 /* Block: Recently Compared */
 .block-compared {}
 
-/* Block: Poll */
-.block-poll label {}
-.block-poll input.radio { float:left; margin:1px -18px 0 0; }
-.block-poll .label { display:block; margin-left:18px; }
-.block-poll li { padding:3px 9px; }
-.block-poll .actions { margin:5px 0 0; }
-.block-poll .answer { font-weight:bold; }
-.block-poll .votes { float:right; margin-left:10px; }
-
 /* Block: Tags */
 .block-tags ul,
 .block-tags li { display:inline; }
@@ -1216,7 +1207,6 @@ tr.summary-details-excluded { font-style:italic; }
 .block .block-content:after,
 .block .actions:after,
 .block li.item:after,
-.block-poll li:after,
 .block-layered-nav .currently li:after,
 .page-title:after,
 .products-grid:after,

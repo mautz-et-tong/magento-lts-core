@@ -564,31 +564,6 @@ class Mage_Adminhtml_CustomerController extends Mage_Adminhtml_Controller_Action
         $this->renderLayout();
     }
 
-    /**
-     * Get customer's tags list
-     *
-     */
-    public function productTagsAction()
-    {
-        $this->_initCustomer();
-        $this->loadLayout()
-            ->getLayout()
-            ->getBlock('admin.customer.tags')
-            ->setCustomerId(Mage::registry('current_customer')->getId())
-            ->setUseAjax(true);
-        $this->renderLayout();
-    }
-
-    public function tagGridAction()
-    {
-        $this->_initCustomer();
-        $this->loadLayout();
-        $this->getLayout()->getBlock('admin.customer.tags')->setCustomerId(
-            Mage::registry('current_customer')
-        );
-        $this->renderLayout();
-    }
-
     public function validateAction()
     {
         $response       = new Varien_Object();

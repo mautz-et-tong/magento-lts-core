@@ -133,15 +133,6 @@
             </updates>
         </layout>
         <events>
-            <tag_tag_product_collection_load_after>
-                <observers>
-                    <review>
-                        <type>model</type>
-                        <class>review/observer</class>
-                        <method>tagProductCollectionLoadAfter</method>
-                    </review>
-                </observers>
-            </tag_tag_product_collection_load_after>
             <catalog_block_product_list_collection>
                 <observers>
                     <review>
