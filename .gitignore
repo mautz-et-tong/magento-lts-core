@@ -1,0 +1,6 @@
+*~
+.DS_Store
+/app/etc/local.xml
+var/
+!var/.htaccess
+!var/.gitkeep

@@ -1,0 +1,102 @@
+{
+  "name": "smartdevs/magento-lts-core",
+  "description": "Minimized Magento with useful core patches and removed unused modules",
+  "type": "magento-module",
+  "license": ["OSL-3.0", "AFL-3.0"],
+  "require": {
+    "php": ">=5.5.0",
+    "magento-hackathon/magento-composer-installer": "3.0.7-rc.1",
+    "zookal/magento-mock": "1.2.0"
+  },
+  "authors": [
+    {
+      "name": "Daniel Niedergesäß",
+      "email": "daniel.niedergesaess@gmail.com",
+      "role": "Maintainer"
+    }
+  ],
+  "extra": {
+    "map": [
+      [
+        "app",
+        "app"
+      ],
+      [
+        "downloader",
+        "downloader"
+      ],
+      [
+        "errors",
+        "errors"
+      ],
+      [
+        "includes",
+        "includes"
+      ],
+      [
+        "js",
+        "js"
+      ],
+      [
+        "lib",
+        "lib"
+      ],
+      [
+        "media",
+        "media"
+      ],
+      [
+        "shell",
+        "shell"
+      ],
+      [
+        "skin",
+        "skin"
+      ],
+      [
+        "var",
+        "var"
+      ],
+      [
+        ".htaccess",
+        ".htaccess"
+      ],
+      [
+        "api.php",
+        "api.php"
+      ],
+      [
+        "cron.php",
+        "cron.php"
+      ],
+      [
+        "cron.sh",
+        "cron.sh"
+      ],
+      [
+        "favicon.ico",
+        "favicon.ico"
+      ],
+      [
+        "get.php",
+        "get.php"
+      ],
+      [
+        "index.php",
+        "index.php"
+      ],
+      [
+        "install.php",
+        "install.php"
+      ],
+      [
+        "mage",
+        "mage"
+      ],
+      [
+        "LICENSE.html",
+        "LICENSE.html"
+      ]
+    ]
+  }
+}
