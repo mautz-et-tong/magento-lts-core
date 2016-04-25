@@ -293,7 +293,6 @@ p.required { font-size:10px; text-align:right; color:#f00; }
 .page-title h1,
 .page-title h2 { font-size:18px; color:#000; }
 .page-title .separator { margin:0 3px; }
-.page-title .link-rss { float:right; }
 .title-buttons { text-align:right; }
 .title-buttons h1,
 .title-buttons h2,
@@ -405,7 +404,6 @@ tr.summary-details-excluded { font-style:italic; }
 .link-reorder { font-weight:bold; }
 .link-compare { font-weight:bold; }
 .link-print { background:url(../images/i_print.gif) 0 2px no-repeat; padding:2px 0 2px 25px; }
-.link-rss { background:url(../images/i_rss.gif) 0 1px no-repeat; padding-left:18px; white-space:nowrap; }
 .btn-remove { display:block; width:11px; height:11px; font-size:0; line-height:0; background:url(../images/btn_remove.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
 .btn-remove2 { display:block; width:16px; height:16px; font-size:0; line-height:0; background:url(../images/btn_trash.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
 .btn-edit    { display:block; width:11px; height:11px; font-size:0; line-height:0; background:url(../images/btn_edit.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
@@ -888,9 +886,6 @@ tr.summary-details-excluded { font-style:italic; }
 .page-sitemap .sitemap li.level-0 { margin:10px 0 0; font-weight:bold; }
 .page-sitemap .sitemap li.level-0 a {}
 
-/* RSS */
-.rss-title h1 { background:url(../images/i_rss-big.png) 0 4px no-repeat; padding-left:27px; }
-.rss-table .link-rss { display:block; line-height:1.35; background-position:0 2px; }
 /* ======================================================================================= */
 
 
@@ -1096,7 +1091,6 @@ tr.summary-details-excluded { font-style:italic; }
 
 
 /* My Account ============================================================================= */
-.my-account .title-buttons .link-rss { float:none; margin:0; }
 
 /********** < Dashboard */
 .dashboard {}

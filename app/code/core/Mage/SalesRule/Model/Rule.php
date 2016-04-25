@@ -72,8 +72,6 @@
  * @method Mage_SalesRule_Model_Rule setApplyToShipping(int $value)
  * @method int getTimesUsed()
  * @method Mage_SalesRule_Model_Rule setTimesUsed(int $value)
- * @method int getIsRss()
- * @method Mage_SalesRule_Model_Rule setIsRss(int $value)
  * @method string getWebsiteIds()
  * @method Mage_SalesRule_Model_Rule setWebsiteIds(string $value)
  * @method int getCouponType()

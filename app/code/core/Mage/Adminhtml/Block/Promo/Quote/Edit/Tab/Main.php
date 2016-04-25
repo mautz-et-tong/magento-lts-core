@@ -226,21 +226,6 @@ class Mage_Adminhtml_Block_Promo_Quote_Edit_Tab_Main
             'label' => Mage::helper('salesrule')->__('Priority'),
         ));
 
-        $fieldset->addField('is_rss', 'select', array(
-            'label'     => Mage::helper('salesrule')->__('Public In RSS Feed'),
-            'title'     => Mage::helper('salesrule')->__('Public In RSS Feed'),
-            'name'      => 'is_rss',
-            'options'   => array(
-                '1' => Mage::helper('salesrule')->__('Yes'),
-                '0' => Mage::helper('salesrule')->__('No'),
-            ),
-        ));
-
-        if(!$model->getId()){
-            //set the default value for is_rss feed to yes for new promotion
-            $model->setIsRss(1);
-        }
-
         $form->setValues($model->getData());
 
         $autoGenerationCheckbox->setValue(1);

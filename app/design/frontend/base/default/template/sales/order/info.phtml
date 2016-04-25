@@ -31,7 +31,6 @@
     <h1><?php echo $this->__('Order #%s - %s', $_order->getRealOrderId(), $_order->getStatusLabel()) ?></h1>
     <?php echo $this->getChildHtml('buttons') ?>
 </div>
-<?php echo $this->getStatusHistoryRssUrl($_order) ?>
 <dl class="order-info">
     <dt><?php echo $this->__('About This Order:') ?></dt>
     <dd>

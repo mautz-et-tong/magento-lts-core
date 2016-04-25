@@ -116,7 +116,6 @@ class Mage_Page_Block_Html_Head extends Mage_Core_Block_Template
      *  - js_css
      *  - skin_js
      *  - skin_css
-     *  - rss
      *
      * @param string $type
      * @param string $name
@@ -305,11 +304,6 @@ class Mage_Page_Block_Html_Head extends Mage_Core_Block_Template
         $params = $itemParams ? ' ' . $itemParams : '';
         $href   = $itemName;
         switch ($itemType) {
-            case 'rss':
-                $lines[$itemIf]['other'][] = sprintf('<link href="%s"%s rel="alternate" type="application/rss+xml" />',
-                    $href, $params
-                );
-                break;
             case 'link_rel':
                 $lines[$itemIf]['other'][] = sprintf('<link%s href="%s" />', $params, $href);
                 break;

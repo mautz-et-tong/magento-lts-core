@@ -349,18 +349,4 @@ Emails
             <action method="addItemRender"><type>bundle</type><block>bundle/sales_order_items_renderer</block><template>bundle/email/order/items/creditmemo/default.phtml</template></action>
         </reference>
     </sales_email_order_creditmemo_items>
-
-<!--
-RSS
--->
-    <rss_catalog_category>
-        <reference name="rss.catalog.category">
-            <action method="addPriceBlockType"><type>bundle</type><block>bundle/catalog_product_price</block><template>bundle/rss/catalog/product/price.phtml</template></action>
-        </reference>
-    </rss_catalog_category>
-    <rss_catalog_new>
-        <reference name="rss.catalog.new">
-            <action method="addPriceBlockType"><type>bundle</type><block>bundle/catalog_product_price</block><template>bundle/rss/catalog/product/price.phtml</template></action>
-        </reference>
-    </rss_catalog_new>
 </layout>

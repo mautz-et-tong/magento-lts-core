@@ -55,7 +55,6 @@ CREATE TABLE `{$installer->getTable('salesrule')}` (
   `simple_free_shipping` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `apply_to_shipping` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `times_used` int(11) unsigned NOT NULL DEFAULT '0',
-  `is_rss` tinyint(4) NOT NULL DEFAULT '0',
   `website_ids` text,
   PRIMARY KEY (`rule_id`),
   KEY `sort_order` (`is_active`,`sort_order`,`to_date`,`from_date`)

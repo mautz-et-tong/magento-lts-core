@@ -337,12 +337,6 @@ $tables = array(
                 'default'   => '0',
                 'comment'   => 'Times Used'
             ),
-            'is_rss' => array(
-                'type'      => Varien_Db_Ddl_Table::TYPE_SMALLINT,
-                'nullable'  => false,
-                'default'   => '0',
-                'comment'   => 'Is Rss'
-            ),
             'website_ids' => array(
                 'type'      => Varien_Db_Ddl_Table::TYPE_TEXT,
                 'length'    => '64K',

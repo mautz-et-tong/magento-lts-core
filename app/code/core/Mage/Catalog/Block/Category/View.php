@@ -53,36 +53,14 @@ class Mage_Catalog_Block_Category_View extends Mage_Core_Block_Template
             if ($this->helper('catalog/category')->canUseCanonicalTag()) {
                 $headBlock->addLinkRel('canonical', $category->getUrl());
             }
-            /*
-            want to show rss feed in the url
-            */
-            if ($this->IsRssCatalogEnable() && $this->IsTopCategory()) {
-                $title = $this->helper('rss')->__('%s RSS Feed',$this->getCurrentCategory()->getName());
-                $headBlock->addItem('rss', $this->getRssLink(), 'title="'.$title.'"');
-            }
         }
 
         return $this;
     }
 
-    public function IsRssCatalogEnable()
-    {
-        return Mage::getStoreConfig('rss/catalog/category');
-    }
-
     public function IsTopCategory()
     {
         return $this->getCurrentCategory()->getLevel()==2;
-    }
-
-    public function getRssLink()
-    {
-        return Mage::getUrl('rss/catalog/category',
-            array(
-                'cid' => $this->getCurrentCategory()->getId(),
-                'store_id' => Mage::app()->getStore()->getId()
-            )
-        );
     }
 
     public function getProductListHtml()

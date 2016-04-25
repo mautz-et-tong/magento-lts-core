@@ -498,41 +498,6 @@ class Mage_Wishlist_Helper_Data extends Mage_Core_Helper_Abstract
     }
 
     /**
-     * Retrieve RSS URL
-     *
-     * @param $wishlistId
-     * @return string
-     */
-    public function getRssUrl($wishlistId = null)
-    {
-        $customer = $this->_getCurrentCustomer();
-        if ($customer) {
-            $key = $customer->getId() . ',' . $customer->getEmail();
-            $params = array(
-                'data' => Mage::helper('core')->urlEncode($key),
-                '_secure' => false,
-            );
-        }
-        if ($wishlistId) {
-            $params['wishlist_id'] = $wishlistId;
-        }
-        return $this->_getUrl(
-            'rss/index/wishlist',
-            $params
-        );
-    }
-
-    /**
-     * Is allow RSS
-     *
-     * @return bool
-     */
-    public function isRssAllow()
-    {
-        return Mage::getStoreConfigFlag('rss/wishlist/active');
-    }
-
-    /**
      * Retrieve default empty comment message
      *
      * @return string
