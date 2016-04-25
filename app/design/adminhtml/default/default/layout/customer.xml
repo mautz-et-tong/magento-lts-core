@@ -94,18 +94,6 @@
         </block>
     </adminhtml_customer_productreviews>
 
-    <adminhtml_customer_producttags>
-        <block type="core/text_list" name="root" output="toHtml">
-            <block type="adminhtml/customer_edit_tab_tag" name="admin.customer.tags"/>
-        </block>
-    </adminhtml_customer_producttags>
-
-    <adminhtml_customer_taggrid>
-        <block type="core/text_list" name="root" output="toHtml">
-            <block type="adminhtml/customer_edit_tab_tag" name="admin.customer.tags"/>
-        </block>
-    </adminhtml_customer_taggrid>
-
     <adminhtml_customer_newsletter>
         <block type="core/text_list" name="root" output="toHtml">
             <block type="adminhtml/customer_edit_tab_newsletter_grid" name="admin.customer.newsletter.grid"/>

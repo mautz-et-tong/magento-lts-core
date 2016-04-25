@@ -72,12 +72,6 @@ Catalog layout
         <block type="rss/catalog_salesrule" output="toHtml" name="rss.catalog.salesrule" />
     </rss_catalog_salesrule>
 
-    <rss_catalog_tag>
-        <block type="rss/catalog_tag" output="toHtml" name="rss.catalog.tag">
-            <action method="addPriceBlockType"><type>msrp_rss</type><block>catalog/product_price</block><template>catalog/product/price_msrp_rss.phtml</template></action>
-        </block>
-    </rss_catalog_tag>
-
     <rss_catalog_notifystock>
         <block type="rss/catalog_notifyStock" output="toHtml" name="rss.catalog.notifystock" />
     </rss_catalog_notifystock>

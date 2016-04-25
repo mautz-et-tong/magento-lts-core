@@ -249,13 +249,6 @@
                 <Mage_Core/>
             </depends>
         </Mage_Review>
-        <Mage_Tag>
-            <active>true</active>
-            <codePool>core</codePool>
-            <depends>
-                <Mage_Catalog/>
-            </depends>
-        </Mage_Tag>
         <Mage_Cms>
             <active>true</active>
             <codePool>core</codePool>

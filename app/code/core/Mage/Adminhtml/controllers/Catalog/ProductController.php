@@ -832,17 +832,6 @@ class Mage_Adminhtml_Catalog_ProductController extends Mage_Adminhtml_Controller
     }
 
     /**
-     * Get tag grid
-     */
-    public function tagGridAction()
-    {
-        $this->loadLayout();
-        $this->getLayout()->getBlock('admin.product.tags')
-            ->setProductId($this->getRequest()->getParam('id'));
-        $this->renderLayout();
-    }
-
-    /**
      * Get alerts price grid
      */
     public function alertsPriceGridAction()
@@ -967,18 +956,6 @@ class Mage_Adminhtml_Catalog_ProductController extends Mage_Adminhtml_Controller
                 );
             }
         }
-    }
-
-    /**
-     * Get tag customer grid
-     *
-     */
-    public function tagCustomerGridAction()
-    {
-        $this->loadLayout();
-        $this->getLayout()->getBlock('admin.product.tags.customers')
-                ->setProductId($this->getRequest()->getParam('id'));
-        $this->renderLayout();
     }
 
     public function quickCreateAction()
