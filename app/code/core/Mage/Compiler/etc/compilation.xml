@@ -83,13 +83,6 @@
             <Mage_Reports_Block_Product_Compared/>
             <Mage_Reports_Block_Product_Abstract/>
 
-            <Mage_Poll_Model_Poll_Answer/>
-            <Mage_Poll_Model_Poll/>
-            <Mage_Poll_Model_Resource_Poll_Answer_Collection/>
-            <Mage_Poll_Model_Resource_Poll_Answer/>
-            <Mage_Poll_Model_Resource_Poll/>
-            <Mage_Poll_Block_ActivePoll/>
-
             <Mage_Page_Block_Template_Links/>
             <Mage_Page_Block_Switch/>
             <Mage_Page_Block_Html_Header/>

@@ -240,14 +240,6 @@
                 <Mage_Core/>
             </depends>
         </Mage_Backup>
-        <Mage_Poll>
-            <active>true</active>
-            <codePool>core</codePool>
-            <depends>
-                <Mage_Core/>
-                <Mage_Cms/>
-            </depends>
-        </Mage_Poll>
         <Mage_Rating>
             <active>true</active>
             <codePool>core</codePool>
