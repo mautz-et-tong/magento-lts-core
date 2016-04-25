@@ -45,11 +45,6 @@ class Varien_Autoload
     public function __construct()
     {
         register_shutdown_function(array($this, 'destroy'));
-        $this->_isIncludePathDefined = defined('COMPILER_INCLUDE_PATH');
-        if (defined('COMPILER_COLLECT_PATH')) {
-            $this->_collectClasses  = true;
-            $this->_collectPath     = COMPILER_COLLECT_PATH;
-        }
         self::registerScope(self::$_scope);
     }
 
@@ -84,14 +79,7 @@ class Varien_Autoload
         if ($this->_collectClasses) {
             $this->_arrLoadedClasses[self::$_scope][] = $class;
         }
-        if ($this->_isIncludePathDefined) {
-            $classFile =  COMPILER_INCLUDE_PATH . DIRECTORY_SEPARATOR . $class;
-        } else {
-            $classFile = str_replace(' ', DIRECTORY_SEPARATOR, ucwords(str_replace('_', ' ', $class)));
-        }
-        $classFile.= '.php';
-        //echo $classFile;die();
-        return include $classFile;
+        return include str_replace(' ', DIRECTORY_SEPARATOR, ucwords(str_replace('_', ' ', $class))) . '.php';
     }
 
     /**
@@ -104,9 +92,6 @@ class Varien_Autoload
     static public function registerScope($code)
     {
         self::$_scope = $code;
-        if (defined('COMPILER_INCLUDE_PATH')) {
-            @include COMPILER_INCLUDE_PATH . DIRECTORY_SEPARATOR . self::SCOPE_FILE_PREFIX.$code.'.php';
-        }
     }
 
     /**
