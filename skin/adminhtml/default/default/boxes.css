@@ -1561,20 +1561,6 @@ ul.super-product-attributes { padding-left:15px; }
 #catalog-wysiwyg-editor .magento_message { padding:0 7px; }
 #catalog-wysiwyg-editor .magento_buttons { padding-left:7px; padding-right:7px; }
 
-/* Backups */
-.backup-dialog { background-color:#6f8992; background:rgba(111, 137, 146, 0.5); cursor:default; left:50%; margin:0 0 0 -271px; position:fixed; top:50%; width:470px; padding:8px; z-index:400; -moz-box-shadow:0 0 100px #ccc; -webkit-box-shadow:0 0 100px #ccc; box-shadow:0 0 100px #ccc; }
-.backup-dialog .entry-edit { border:1px solid #6f8992; }
-.backup-dialog .content { background:#fff; border-bottom:1px solid #ccc; max-height:400px; overflow:auto; }
-.backup-dialog .question {margin-top: 15px;}
-.backup-dialog .buttons-set { border-top:1px solid #ddd; background:#eee; margin:0; overflow:hidden; padding:7px 10px 8px; width:448px; }
-.backup-dialog .buttons-set button { margin:0 0 0 5px; }
-.backup-dialog #ftp-credentials-container {margin-top: 25px;}
-.backup-dialog .password-box-container {margin-top: 15px;}
-.backup-dialog #ftp-credentials-container fieldset {margin-bottom: 0;}
-.backup-dialog input[type=text], .backup-dialog input[type=password] {width: 180px}
-.backup-dialog .exclude-media-checkbox-container {margin-top: 15px;}
-.backup-dialog td.maintenance-checkbox-container {margin-top: 0; padding-top: 4px;}
-
 /*****************************************/
 /******** ALIGNMENTS AND CLEARS **********/
 /*****************************************/

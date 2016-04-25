@@ -52,25 +52,10 @@ class Mage_Adminhtml_Block_System_Store_Delete_Form extends Mage_Adminhtml_Block
         $form = new Varien_Data_Form(array('id' => 'edit_form', 'action' => $this->getData('action'), 'method' => 'post'));
 
         $form->setHtmlIdPrefix('store_');
-
-        $fieldset = $form->addFieldset('base_fieldset', array('legend' => Mage::helper('core')->__('Backup Options'), 'class' => 'fieldset-wide'));
-
-        $fieldset->addField('item_id', 'hidden', array(
+        $form->addField('item_id', 'hidden', array(
             'name'  => 'item_id',
             'value' => $dataObject->getId(),
         ));
-
-        $fieldset->addField('create_backup', 'select', array(
-            'label'     => Mage::helper('adminhtml')->__('Create DB Backup'),
-            'title'     => Mage::helper('adminhtml')->__('Create DB Backup'),
-            'name'      => 'create_backup',
-            'options'   => array(
-                '1' => Mage::helper('adminhtml')->__('Yes'),
-                '0' => Mage::helper('adminhtml')->__('No'),
-            ),
-            'value'     => '1',
-        ));
-
         $form->setUseContainer(true);
         $this->setForm($form);
 
