@@ -30,6 +30,7 @@
         <install>
             <date/>
         </install>
+        <skip_process_modules_updates>1</skip_process_modules_updates>
         <resources>
             <default_setup>
                 <connection>
