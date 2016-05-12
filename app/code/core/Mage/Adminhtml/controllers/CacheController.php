@@ -184,30 +184,6 @@ class Mage_Adminhtml_CacheController extends Mage_Adminhtml_Controller_Action
     }
 
     /**
-     * Clean configurable swatches files cache
-     */
-    public function cleanSwatchesAction()
-    {
-        try {
-            Mage::helper('configurableswatches/productimg')->clearSwatchesCache();
-            Mage::dispatchEvent('clean_configurable_swatches_cache_after');
-            $this->_getSession()->addSuccess(
-                Mage::helper('adminhtml')->__('The configurable swatches image cache was cleaned.')
-            );
-        }
-        catch (Mage_Core_Exception $e) {
-            $this->_getSession()->addError($e->getMessage());
-        }
-        catch (Exception $e) {
-            $this->_getSession()->addException(
-                $e,
-                Mage::helper('adminhtml')->__('An error occurred while clearing the configurable swatches image cache.')
-            );
-        }
-        $this->_redirect('*/*');
-    }
-
-    /**
      * Check if cache management is allowed
      *
      * @return bool
