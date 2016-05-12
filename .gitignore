@@ -1,6 +1,9 @@
 *~
 .DS_Store
 /app/etc/local.xml
+media/
+skin/frontend/rwd/default/images/media/logo.png
+skin/frontend/rwd/default/images/media/logo_small.png
 var/
 !var/.htaccess
 !var/.gitkeep
