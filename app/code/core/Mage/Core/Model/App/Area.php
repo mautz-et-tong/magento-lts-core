@@ -120,9 +120,6 @@ class Mage_Core_Model_App_Area
             case self::PART_TRANSLATE:
                 $this->_initTranslate();
                 break;
-            case self::PART_DESIGN:
-                $this->_initDesign();
-                break;
         }
         $this->_loadedParts[$part] = true;
         Varien_Profiler::stop('mage::dispatch::controller::action::predispatch::load_area::'.$this->_code.'::'.$part);
@@ -145,25 +142,5 @@ class Mage_Core_Model_App_Area
     {
         Mage::app()->getTranslator()->init($this->_code);
         return $this;
-    }
-
-    protected function _initDesign()
-    {
-        if (Mage::app()->getRequest()->isStraight()) {
-            return $this;
-        }
-        $designPackage = Mage::getSingleton('core/design_package');
-        if ($designPackage->getArea() != self::AREA_FRONTEND)
-            return;
-
-        $currentStore = Mage::app()->getStore()->getStoreId();
-
-        $designChange = Mage::getSingleton('core/design')
-            ->loadChange($currentStore);
-
-        if ($designChange->getData()) {
-            $designPackage->setPackageName($designChange->getPackage())
-                ->setTheme($designChange->getTheme());
-        }
     }
 }

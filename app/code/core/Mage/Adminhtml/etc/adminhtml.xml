@@ -46,11 +46,6 @@
                     <title>Tools</title>
                     <sort_order>20</sort_order>
                 </tools>
-                <design translate="title">
-                    <title>Design</title>
-                    <action>adminhtml/system_design</action>
-                    <sort_order>30</sort_order>
-                </design>
                 <convert translate="title">
                     <title>Import/Export</title>
                     <sort_order>40</sort_order>

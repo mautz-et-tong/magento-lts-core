@@ -428,35 +428,6 @@ $table = $installer->getConnection()
 $installer->getConnection()->createTable($table);
 
 /**
- * Create table 'core/design_change'
- */
-$table = $installer->getConnection()
-    ->newTable($installer->getTable('core/design_change'))
-    ->addColumn('design_change_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
-        'identity'  => true,
-        'nullable'  => false,
-        'primary'   => true,
-        ), 'Design Change Id')
-    ->addColumn('store_id', Varien_Db_Ddl_Table::TYPE_SMALLINT, null, array(
-        'unsigned'  => true,
-        'nullable'  => false,
-        'default'   => '0',
-        ), 'Store Id')
-    ->addColumn('design', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(
-        ), 'Design')
-    ->addColumn('date_from', Varien_Db_Ddl_Table::TYPE_DATE, null, array(
-        ), 'First Date of Design Activity')
-    ->addColumn('date_to', Varien_Db_Ddl_Table::TYPE_DATE, null, array(
-        ), 'Last Date of Design Activity')
-    ->addIndex($installer->getIdxName('core/design_change', array('store_id')),
-        array('store_id'))
-    ->addForeignKey($installer->getFkName('core/design_change', 'store_id', 'core/store', 'store_id'),
-        'store_id', $installer->getTable('core/store'), 'store_id',
-        Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
-    ->setComment('Design Changes');
-$installer->getConnection()->createTable($table);
-
-/**
  * Create table 'core/variable'
  */
 $table = $installer->getConnection()

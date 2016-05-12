@@ -898,38 +898,6 @@ $tables = array(
         ),
         'comment' => 'Url Rewrites'
     ),
-    $installer->getTable('core/design_change') => array(
-        'columns' => array(
-            'design_change_id' => array(
-                'type'      => Varien_Db_Ddl_Table::TYPE_INTEGER,
-                'identity'  => true,
-                'nullable'  => false,
-                'primary'   => true,
-                'comment'   => 'Design Change Id'
-            ),
-            'store_id' => array(
-                'type'      => Varien_Db_Ddl_Table::TYPE_SMALLINT,
-                'unsigned'  => true,
-                'nullable'  => false,
-                'default'   => '0',
-                'comment'   => 'Store Id'
-            ),
-            'design' => array(
-                'type'      => Varien_Db_Ddl_Table::TYPE_TEXT,
-                'length'    => 255,
-                'comment'   => 'Design'
-            ),
-            'date_from' => array(
-                'type'      => Varien_Db_Ddl_Table::TYPE_DATE,
-                'comment'   => 'First Date of Design Activity'
-            ),
-            'date_to' => array(
-                'type'      => Varien_Db_Ddl_Table::TYPE_DATE,
-                'comment'   => 'Last Date of Design Activity'
-            )
-        ),
-        'comment' => 'Design Changes'
-    ),
     $installer->getTable('core/flag') => array(
         'columns' => array(
             'flag_id' => array(
