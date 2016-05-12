@@ -167,13 +167,9 @@ class Mage_Core_Block_Template extends Mage_Core_Block_Abstract
      */
     public function setScriptPath($dir)
     {
-        $scriptPath = realpath($dir);
-        if (strpos($scriptPath, realpath(Mage::getBaseDir('design'))) === 0 || $this->_getAllowSymlinks()) {
-            $this->_viewDir = $dir;
-        } else {
-            Mage::log('Not valid script path:' . $dir, Zend_Log::CRIT, null, null, true);
-        }
+        $this->_viewDir = $dir;
         return $this;
+        $scriptPath = realpath($dir);
     }
 
     /**
@@ -236,12 +232,7 @@ HTML;
         }
 
         try {
-            $includeFilePath = realpath($this->_viewDir . DS . $fileName);
-            if (strpos($includeFilePath, realpath($this->_viewDir)) === 0 || $this->_getAllowSymlinks()) {
-                include $includeFilePath;
-            } else {
-                Mage::log('Not valid template file:'.$fileName, Zend_Log::CRIT, null, null, true);
-            }
+            include realpath($this->_viewDir . DS . $fileName);
 
         } catch (Exception $e) {
             ob_get_clean();
@@ -341,18 +332,5 @@ HTML;
             $this->getTemplateFile(),
             'template' => $this->getTemplate()
         );
-    }
-
-    /**
-     * Get is allowed symliks flag
-     *
-     * @return bool
-     */
-    protected function _getAllowSymlinks()
-    {
-        if (is_null($this->_allowSymlinks)) {
-            $this->_allowSymlinks = Mage::getStoreConfigFlag(self::XML_PATH_TEMPLATE_ALLOW_SYMLINK);
-        }
-        return $this->_allowSymlinks;
     }
 }
