@@ -182,6 +182,9 @@ class Mage_Core_Controller_Varien_Front extends Varien_Object
         Mage::dispatchEvent('controller_front_send_response_before', array('front'=>$this));
         Varien_Profiler::start('mage::app::dispatch::send_response');
         $this->getResponse()->sendResponse();
+        if(php_sapi_name() == 'fpm-fcgi' && true === function_exists('fastcgi_finish_request')){
+            fastcgi_finish_request();
+        }
         Varien_Profiler::stop('mage::app::dispatch::send_response');
         Mage::dispatchEvent('controller_front_send_response_after', array('front'=>$this));
         return $this;
