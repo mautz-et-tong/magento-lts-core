@@ -1194,6 +1194,63 @@ class Mage_Eav_Model_Entity_Setup extends Mage_Core_Model_Resource_Setup
 /****************************** CREATE ENTITY TABLES ***********************************/
 
     /**
+     * create store based eav entity tables
+     *
+     * @param string $baseName
+     * @param array $options
+     *      - (bool) no-main            don't create entity main table
+     *      - (bool) no-default-types   don't create default types
+     *      - (array) types             valid Types or custom types
+     *         - 'datetime'  => array(Varien_Db_Ddl_Table::TYPE_DATETIME, null),
+     *         -  'decimal'  => array(Varien_Db_Ddl_Table::TYPE_DECIMAL, '12,4'),
+     *         - 'int'       => array(Varien_Db_Ddl_Table::TYPE_INTEGER, null),
+     *         - 'text'      => array(Varien_Db_Ddl_Table::TYPE_TEXT, '64k'),
+     *         - 'varchar'   => array(Varien_Db_Ddl_Table::TYPE_TEXT, '255'),
+     *         - 'char'      => array(Varien_Db_Ddl_Table::TYPE_TEXT, '255')
+     *
+     * @return Mage_Eav_Model_Entity_Setup
+     */
+    public function createStoreBasedEntityTables($baseTableName, array $options = array())
+    {
+        parent::createEntityTables($baseTableName, $options);
+
+        $isNoDefaultTypes = $this->_getValue($options, 'no-default-types', false);
+        $customTypes = $this->_getValue($options, 'types', array());
+
+        $types = array();
+        if (!$isNoDefaultTypes) {
+            $types = array(
+                'datetime' => array(Varien_Db_Ddl_Table::TYPE_DATETIME, null),
+                'decimal' => array(Varien_Db_Ddl_Table::TYPE_DECIMAL, '12,4'),
+                'int' => array(Varien_Db_Ddl_Table::TYPE_INTEGER, null),
+                'text' => array(Varien_Db_Ddl_Table::TYPE_TEXT, '64k'),
+                'varchar' => array(Varien_Db_Ddl_Table::TYPE_TEXT, '255'),
+                'char' => array(Varien_Db_Ddl_Table::TYPE_TEXT, '255')
+            );
+        }
+
+        if (!empty($customTypes)) {
+            foreach ($customTypes as $type => $fieldType) {
+                $types[$type] = $fieldType;
+            }
+        }
+
+        foreach (array_keys($types) as $type) {
+            $this->getConnection()->addIndex(
+                $this->getTable(array($baseTableName, $type)),
+                $this->getIdxName(
+                    array($baseTableName, $type),
+                    array('entity_id', 'attribute_id', 'store_id'),
+                    Varien_Db_Adapter_Interface::INDEX_TYPE_UNIQUE
+                ),
+                array('entity_id', 'attribute_id', 'store_id'),
+                Varien_Db_Adapter_Interface::INDEX_TYPE_UNIQUE);
+        }
+
+        return $this;
+    }
+
+    /**
      * Create entity tables
      *
      * @param string $baseName
@@ -1210,7 +1267,7 @@ class Mage_Eav_Model_Entity_Setup extends Mage_Core_Model_Resource_Setup
         $customTypes         = $this->_getValue($options, 'types', array());
         $tables              = array();
         $connection          = $this->getConnection();
-        
+
         if (!$isNoCreateMainTable) {
             /**
              * Create table main eav table
