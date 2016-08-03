@@ -59,6 +59,16 @@ class Varien_Db_Select extends Zend_Db_Select
     const SQL_STRAIGHT_JOIN = 'STRAIGHT_JOIN';
 
     /**
+     * define callback for rendering sql no cache support
+     */
+    const SQL_NO_CACHE = 'sqlNoCache';
+
+    /**
+     * define callback for rendering sql use cache support
+     */
+    const SQL_USE_CACHE = 'sqlUseCache';
+
+    /**
      * Class constructor
      * Add straight join support
      *
@@ -69,7 +79,14 @@ class Varien_Db_Select extends Zend_Db_Select
         if (!isset(self::$_partsInit[self::STRAIGHT_JOIN])) {
             self::$_partsInit = array(self::STRAIGHT_JOIN => false) + self::$_partsInit;
         }
-
+        //extend parts within SQL_NO_CACHE support
+        if (false === isset(self::$_partsInit[self::SQL_NO_CACHE])) {
+            self::$_partsInit = array(self::SQL_NO_CACHE => false) + self::$_partsInit;
+        }
+        //extend parts within SQL_CACHE support
+        if (false === isset(self::$_partsInit[self::SQL_USE_CACHE])) {
+            self::$_partsInit = array(self::SQL_USE_CACHE => false) + self::$_partsInit;
+        }
         parent::__construct($adapter);
     }
 
@@ -470,5 +487,55 @@ class Varien_Db_Select extends Zend_Db_Select
 
         $this->where($exists);
         return $this;
+    }
+
+    /**
+     * add SQL_NO_CACHE to bypass querycache usage
+     *
+     * @param bool $flag
+     * @return Varien_Db_Select
+     */
+    public function sqlNoCache($flag = true)
+    {
+        $this->_parts[self::SQL_NO_CACHE] = (bool)$flag;
+        return $this;
+    }
+    /**
+     * render SQL_NO_CACHE to bypass mysql querycache usage
+     *
+     * @param string $sql SQL query
+     * @return string
+     */
+    protected function _renderSqlNoCache($sql)
+    {
+        if ($this->_parts[self::SQL_NO_CACHE]) {
+            $sql .= ' SQL_NO_CACHE';
+        }
+        return $sql;
+    }
+
+    /**
+     * add SQL_CACHE to enable querycache usage
+     *
+     * @param bool $flag
+     * @return Varien_Db_Select
+     */
+    public function sqlUseCache($flag = true)
+    {
+        $this->_parts[self::SQL_USE_CACHE] = (bool)$flag;
+        return $this;
+    }
+    /**
+     * render SQL_CACHE to enable mysql querycache usage
+     *
+     * @param string $sql SQL query
+     * @return string
+     */
+    protected function _renderSqlUseCache($sql)
+    {
+        if ($this->_parts[self::SQL_USE_CACHE]) {
+            $sql .= ' SQL_CACHE';
+        }
+        return $sql;
     }
 }
