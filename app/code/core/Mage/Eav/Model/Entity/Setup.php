@@ -1209,12 +1209,13 @@ class Mage_Eav_Model_Entity_Setup extends Mage_Core_Model_Resource_Setup
         $isNoDefaultTypes    = $this->_getValue($options, 'no-default-types', false);
         $customTypes         = $this->_getValue($options, 'types', array());
         $tables              = array();
-
+        $connection          = $this->getConnection();
+        
         if (!$isNoCreateMainTable) {
             /**
              * Create table main eav table
              */
-            $connection = $this->getConnection();
+
             $mainTable = $connection
                 ->newTable($this->getTable($baseTableName))
                 ->addColumn('entity_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
